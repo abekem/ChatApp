@@ -1,0 +1,8 @@
+{
+    "plantuml.diagramsRoot": "sources",
+    "plantuml.exportFormat": "png",
+    "plantuml.exportOutDir": "graphs",
+    "plantuml.exportSubFolder": false,
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "http://localhost:8080"
+}
