@@ -1,6 +1,6 @@
-from models.user import User
-from models.room import Room
-from models.post import Post
+from .user import User
+from .room import Room
+from .post import Post
 
 
 def seed_users():
