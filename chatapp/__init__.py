@@ -1,9 +1,11 @@
 from flask import Flask
-# from flask.ext.sqlalchemy import SQLAlchemy
+from pymongo import MongoClient
 
 app = Flask(__name__)
 app.config.from_object('chatapp.config')
 
-# db = SQLAlchemy(app)
+client = MongoClient('mongo', 27017)
+client['admin'].authenticate("root", "password")
+db = client.test_db
 
 import chatapp.views
