@@ -7,12 +7,12 @@ from chatapp import db
 def seed_users():
     users = db.user_collection
     users.drop()
-    users.insert({"id": 1, "name": "abe", "password": "a", "friends": [2, 3, 5]})
-    users.insert({"id": 2, "name": "ken", "password": "a", "friends": [1, 4, 5]})
-    users.insert({"id": 3, "name": "taro", "password": "a", "friends": [1, 5, 6]})
-    users.insert({"id": 4, "name": "sio", "password": "a", "friends": [2, 6]})
-    users.insert({"id": 5, "name": "yama", "password": "a", "friends": [1, 2, 3, 6]})
-    users.insert({"id": 6, "name": "jun", "password": "a", "friends": [3, 4, 5]})
+    users.insert({"id": 1, "name": "abe", "email": "abe@example.com", "password": "a", "friends": [2, 3, 5]})
+    users.insert({"id": 2, "name": "ken", "email": "ken@example.com", "password": "a", "friends": [1, 4, 5]})
+    users.insert({"id": 3, "name": "taro", "email": "taro@example.com", "password": "a", "friends": [1, 5, 6]})
+    users.insert({"id": 4, "name": "sio", "email": "sio@example.com", "password": "a", "friends": [2, 6]})
+    users.insert({"id": 5, "name": "yama", "email": "yama@example.com", "password": "a", "friends": [1, 2, 3, 6]})
+    users.insert({"id": 6, "name": "jun", "email": "jun@example.com", "password": "a", "friends": [3, 4, 5]})
     return users
 
 
