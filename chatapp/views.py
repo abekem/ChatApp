@@ -32,7 +32,7 @@ def add_post():
 
 @app.route('/users/')
 def user_list():
-    return 'list users'
+    return render_template('user/list.html', users=users.find())
 
 
 @app.route('/users/<int:user_id>/')
@@ -47,7 +47,14 @@ def user_edit(user_id):
 
 @app.route('/users/create/', methods=['GET', 'POST'])
 def user_create():
-    return 'create a new user'
+    if request.method == 'POST':
+        user = {"id": users.count() + 1,
+                "name": request.form['name'], 
+                "email": request.form['email'],
+                "password": request.form['password']}
+        users.insert(user)
+        return redirect(url_for('user_list'))
+    return render_template('user/edit.html')
 
 
 @app.route('/users/<int:user_id>/delete/', methods=['DELETE'])
