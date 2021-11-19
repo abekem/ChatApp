@@ -1,12 +1,14 @@
 {% extends "layout.html" %}
 {% block body %}
-  <form action="{{ url_for('add_post') }}" method=post class=add-post>
+  {% if session.user_id %}
+  <form action="{{ url_for('add_post') }}" method=post class=add-entry>
     <dl>
-      <dt>content:
+      <dt>Content:
       <dd><textarea name=content rows=5 cols=20></textarea>
       <dd><input type=submit value=Share>
     </dl>
   </form>
+  {% endif %}
 
   <ul class=posts>
   {% for post in posts %}
