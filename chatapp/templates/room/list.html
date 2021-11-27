@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h2>Rooms you joined</h2> 
+
+  <ul>
+  {% for room in rooms %}
+  <li><a href="{{ url_for('show_posts_in_room', room_id=room.id) }}">{{ room.id }}</a></li>
+  {% else %}
+  <li><em>Unbelievable.  You are not join any room.</em></li>
+  {% endfor %}
+  </ul>
+
+  <a href="{{ url_for('room_create') }}">create room</a>
+{% endblock body %}

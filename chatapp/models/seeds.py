@@ -20,6 +20,7 @@ def seed_rooms():
     rooms = db.room_collection
     rooms.drop()
     rooms.insert({"id": 1, "participants": [1, 5]})
+    rooms.insert({"id": 2, "participants": [1, 2, 3, 4, 5, 6]})
     return rooms
 
 
