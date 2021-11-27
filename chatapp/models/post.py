@@ -1,8 +1,11 @@
-class Post:
+from mongoengine.document import Document
+from mongoengine import fields
+from datetime import datetime
 
-    def __init__(self, args):
-        self.id = args["id"]
-        self.auther_id = args["auther_id"]
-        self.room_id = args["room_id"]
-        self.sent_time = args["sent_time"]
-        self.content = args["content"]
+
+class Post(Document):
+    id = fields.IntField(primary_key=True)
+    auther_id = fields.IntField()
+    room_id = fields.IntField()
+    sent_time = fields.DateTimeField(default=datetime.now())
+    content = fields.StringField()

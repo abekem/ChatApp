@@ -1,8 +1,11 @@
-class User:
+from mongoengine.document import Document
+from mongoengine import fields
 
-    def __init__(self, args):
-        self.id = args["id"]
-        self.name = args["name"]
-        self.email = args["email"]
-        self.password = args["password"]
-        self.friends = args["friends"]
+
+class User(Document):
+    id = fields.IntField(primary_key=True)
+    name = fields.StringField()
+    email = fields.StringField()
+    # fields.EmailField()
+    password = fields.StringField()
+    # friends = args["friends"]

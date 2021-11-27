@@ -12,7 +12,7 @@
 
   <ul class=posts>
   {% for post in posts %}
-    <li><h2>{{ users.find_one({"id":post.auther_id}).name }}</h2>{{ post.content|safe }}
+    <li><h2>{{ users.get(id=post.auther_id).name }}</h2>{{ post.content|safe }}
   {% else %}
     <li><em>Unbelievable.  No entries here so far</em>
   {% endfor %}

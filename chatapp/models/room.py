@@ -1,5 +1,8 @@
-class Room:
+from mongoengine.document import Document
+from mongoengine import fields
 
-    def __init__(self, args):
-        self.id = args["id"]
-        self.participants = args["participants"]
+
+class Room(Document):
+    id = fields.IntField(primary_key=True)
+    # name = fields.StringField()
+    # participants = args["participants"]
